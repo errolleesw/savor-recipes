@@ -27,7 +27,9 @@ const server = createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () =>
+  console.log(`App running on http://localhost:${port}`)
+); // log localhost url in console.
 server.on("error", onError);
 server.on("listening", onListening);
 
@@ -86,5 +88,4 @@ function onListening() {
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   const port = addr.port;
   dbg("Listening on " + bind);
-  console.log(`Server is running on http://localhost:${port}`); // Add this line to log a message when the server starts
 }
