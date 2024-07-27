@@ -1,8 +1,110 @@
+html,
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.container-fluid {
+  height: 100%;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #c0a16b; /* Adjust this color to match the example */
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.card-text small {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.navbar {
+  width: 100%; /* Full width for top navbar */
+  min-height: auto; /* Adjust height for top navbar */
+  padding: 0rem 1rem; /* Add padding for better appearance */
+}
+
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.navbar .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar .nav-item .nav-link.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.navbar .dropdown-menu {
+  position: absolute;
+  top: auto;
+  left: 0;
+  margin-top: -0.125rem;
+}
+
+.navbar .dropdown-toggle::after {
+  display: none;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.recipe-background {
+  height: 200px; /* Adjust the height as needed */
+  background: url("/sample-food-image.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+#navAppName,
+.nav-item-text,
+#userName {
+  padding: 10px;
+}
+
+.card {
+  border: none; /* Remove border from cards */
+  border-radius: 0; /* Remove border radius from cards */
+}
+
+.card img {
+  border-radius: 0; /* Remove border radius from images */
+}
+
+.card-body {
+  padding: 1rem; /* Add padding to card body */
+}
+
+.btn-link {
+  color: #007bff;
+  text-decoration: none;
+  padding: 0;
+}
+
+.btn-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }

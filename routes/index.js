@@ -1,9 +1,25 @@
 import { Router } from 'express';
-var router = Router();
+import links from "../data/links.js";
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+const indexRouter = Router();
+
+const about = "This is a recipe management app.";
+
+indexRouter.get("/", (req, res) => {
+  res.render("index", { title: "Savor", links: links, about: about });
 });
 
-export default router;
+indexRouter.get("/settings", (req, res) =>
+  res.send("TBD - SETTINGS")
+);
+
+indexRouter.get("/ingredients", (req, res) =>
+  res.send("TBD - ingredients database")
+);
+
+indexRouter.get("/mealplan", (req, res) =>
+  res.send("TBD - meal planning features")
+);
+
+export default indexRouter;
+
