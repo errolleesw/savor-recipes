@@ -1,0 +1,50 @@
+<!-- views/sign-up-form.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs') %>
+  </head>
+  <body>
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <%- include('partials/homeSidePanel.ejs') %>
+        <div
+          class="col-md-9 d-flex flex-column align-items-center justify-content-center"
+        >
+          <div class="w-50">
+            <form action="" method="POST" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  name="username"
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="username"
+                  required
+                />
+                <div class="invalid-feedback">Please enter a username.</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  name="password"
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="password"
+                  required
+                />
+                <div class="invalid-feedback">Please enter a password.</div>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Sign up
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
