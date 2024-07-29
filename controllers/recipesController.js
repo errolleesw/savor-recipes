@@ -114,7 +114,8 @@ export const recipeEditGet = asyncHandler(async (req, res) => {
     title: `Edit Recipe: ${recipe.name}`,
     links: links,
     recipe: recipe,
-    errors: [], // Pass an empty errors array
+    message: res.locals.message,
+    error: res.locals.error || {}, // Ensure error is an object
   });
 });
 

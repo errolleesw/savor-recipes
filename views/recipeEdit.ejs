@@ -6,7 +6,7 @@
     }) %>
     <div class="container mt-5 pt-4">
       <h1>Edit Recipe</h1>
-      <%- include("partials/errors.ejs") %>
+      <%- include("error.ejs") %>
       <form
         action="/recipes/<%= recipe.id %>/edit"
         method="POST"
