@@ -1,17 +1,15 @@
 // controllers/userController.js
 
-import bcrypt from "bcryptjs";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
 export const registerUser = async (req, res, next) => {
   try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
     await prisma.user.create({
       data: {
         username: req.body.username,
-        password: hashedPassword,
+        password: req.body.password, // Storing password directly (not secure)
       },
     });
     res.redirect("/");
