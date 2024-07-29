@@ -1,9 +1,24 @@
-import { Router } from 'express';
-var router = Router();
+// routes/users.js
+import express from "express";
+import passport from "passport";
+import { registerUser, logoutUser } from "../controllers/userController.js";
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const router = express.Router();
+
+router.get("/sign-up", (req, res) =>
+  res.render("sign-up-form", { title: "Sign up" })
+);
+router.post("/sign-up", registerUser);
+
+// router.get("/log-in", (req, res) => res.render("log-in", { title: "Log in" }));
+router.post(
+  "/log-in",
+  passport.authenticate("local", {
+    successRedirect: "/recipes",
+    failureRedirect: "/log-in",
+  })
+);
+
+router.get("/log-out", logoutUser);
 
 export default router;
