@@ -1,0 +1,120 @@
+<!-- views/recipeCreate.ejs -->
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head.ejs') %>
+  <body>
+    <%- include('partials/navbar.ejs', { links: links, currentUser: currentUser
+    }) %>
+    <div class="container mt-5 pt-4">
+      <h1><%= title %></h1>
+      <%- include("partials/errors.ejs") %>
+      <form
+        action="/recipes/create"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="category"
+            name="category"
+          />
+        </div>
+        <div class="form-group">
+          <label for="tag">Tag:</label>
+          <input type="text" class="form-control" id="tag" name="tag" />
+        </div>
+        <div class="form-group">
+          <label for="servings">Servings:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="servings"
+            name="servings"
+          />
+        </div>
+        <div class="form-group">
+          <label for="preptime">Prep Time (minutes):</label>
+          <input
+            type="number"
+            class="form-control"
+            id="preptime"
+            name="preptime"
+          />
+        </div>
+        <div class="form-group">
+          <label for="cooktime">Cook Time (minutes):</label>
+          <input
+            type="number"
+            class="form-control"
+            id="cooktime"
+            name="cooktime"
+          />
+        </div>
+        <div class="form-group">
+          <label for="ingredients">Ingredients:</label>
+          <textarea
+            class="form-control"
+            id="ingredients"
+            name="ingredients"
+            rows="5"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="method">Method:</label>
+          <textarea
+            class="form-control"
+            id="method"
+            name="method"
+            rows="5"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="notes">Notes:</label>
+          <textarea
+            class="form-control"
+            id="notes"
+            name="notes"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image">Image:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="image"
+            name="image"
+          />
+        </div>
+        <div class="form-group">
+          <label for="source">Source:</label>
+          <input type="url" class="form-control" id="source" name="source" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/recipes" class="btn btn-secondary">Back to all recipes</a>
+      </form>
+    </div>
+  </body>
+</html>

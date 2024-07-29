@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head.ejs') %>
+  <body>
+    <%- include('partials/navbar.ejs', { links: links, currentUser: currentUser
+    }) %>
+    <div class="container mt-5 pt-4">
+      <h1>Edit Recipe</h1>
+      <%- include("partials/errors.ejs") %>
+      <form
+        action="/recipes/<%= recipe.id %>/edit"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            value="<%= recipe.name %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            rows="3"
+          >
+<%= recipe.description %></textarea
+          >
+        </div>
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="category"
+            name="category"
+            value="<%= recipe.category %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="tag">Tag:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="tag"
+            name="tag"
+            value="<%= recipe.tag %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="servings">Servings:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="servings"
+            name="servings"
+            value="<%= recipe.servings %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="preptime">Prep Time (minutes):</label>
+          <input
+            type="number"
+            class="form-control"
+            id="preptime"
+            name="preptime"
+            value="<%= recipe.prep_time %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="cooktime">Cook Time (minutes):</label>
+          <input
+            type="number"
+            class="form-control"
+            id="cooktime"
+            name="cooktime"
+            value="<%= recipe.cook_time %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="ingredients">Ingredients (Markdown supported):</label>
+          <textarea
+            class="form-control"
+            id="ingredients"
+            name="ingredients"
+            rows="5"
+          >
+<%= recipe.ingredients %></textarea
+          >
+        </div>
+        <div class="form-group">
+          <label for="method">Method (Markdown supported):</label>
+          <textarea class="form-control" id="method" name="method" rows="5">
+<%= recipe.method %></textarea
+          >
+        </div>
+        <div class="form-group">
+          <label for="notes">Notes:</label>
+          <textarea class="form-control" id="notes" name="notes" rows="3">
+<%= recipe.notes %></textarea
+          >
+        </div>
+        <div class="form-group">
+          <label for="source">Source:</label>
+          <input
+            type="url"
+            class="form-control"
+            id="source"
+            name="source"
+            value="<%= recipe.source %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="image">Image:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="image"
+            name="image"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="/recipes/<%= recipe.id %>" class="btn btn-secondary"
+          >Back to Recipe</a
+        >
+        <a href="/recipes" class="btn btn-secondary">Back to all recipes</a>
+      </form>
+    </div>
+  </body>
+</html>
